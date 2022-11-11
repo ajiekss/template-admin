@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/coba-style.css">
+</head>
+<body>
+    <div class="theme-switch">
+        <div class="switch"></div>
+    </div>
+    <div class="navigation">
+        <ul>
+            <a href="" class="active">Home</a>
+            <a href="">About Us</a>
+            <a href="">Gallery</a>
+            <a href="">Our Team</a>
+            <a href="">Testimony</a>
+        </ul>
+    </div>
+    <button>Cgange</button>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $('body').toggleClass(window.localStorage.toggled);
+
+        $(".theme-switch").on("click", function(){
+            if(window.localStorage.toggled != "light-theme"){
+                $('body').toggleClass("light-theme", true );
+                window.localStorage.toggled = "light-theme";
+            }else{
+                $('body').toggleClass("light-theme", false );
+                window.localStorage.toggled = "";
+            }
+        });
+    </script>
+</body>
+</html>
